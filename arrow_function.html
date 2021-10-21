@@ -1,0 +1,113 @@
+<html>
+    <body>
+        
+    <script>
+        
+        console.log(`
+        1.arrow function to accept an array of subject marks of a student and calculate its average.
+        2.to display Fibonacci series.
+        3.function to sort an array of elements using bubble sort.
+        4.function to check whether the entered string is palindrome or not.`);
+var ch=parseInt(prompt("enter your choice"));
+switch(ch)
+ {
+     case 1://to display total marks 
+     var average =(marks) =>
+            {
+                var total=0;
+                var size=5;
+                for (var i=0;i<size;i++)
+                {
+                    total += marks[i];
+                }
+                return total/size;
+            }
+            var marks=[];
+            marks[0]=parseInt(prompt("Enter Maths Score :"));
+            marks[1]=parseInt(prompt("Enter Physics Score :"));
+            marks[2]=parseInt(prompt("Enter Chemistry Score :"));
+            marks[3]=parseInt(prompt("Enter CS Score :"));
+            marks[4]=parseInt(prompt("Enter EM Score :"));
+            console.log("Average marks ="+ average(marks));
+            break;
+         case 2: //To display the fibonacci series
+        var fibonacci =(fib)=>{
+            var fib1=0,fib2=1;
+            var counter =0;
+            console.log(fib1);
+            console.log(fib2);
+            while (counter < fib-2){
+                var fib3=fib2 + fib1;
+                    fib1=fib2;
+                    fib2=fib3;
+                    counter=counter+1;
+                    console.log(fib2)
+                }
+            }
+
+                var fib=parseInt(prompt("Enter the positive Number : "));
+                fibonacci(fib);
+                break;
+ case 3:
+ let bubbleSort = (inputArr) => {
+    
+    let len = inputArr.length;
+    for (let i = 0; i < len; i++) {
+        for (let j = 0; j < len; j++) {
+            if (inputArr[j] > inputArr[j + 1]) {
+                let tmp = inputArr[j];
+                inputArr[j] = inputArr[j + 1];
+                inputArr[j + 1] = tmp;
+            }
+        }
+    }
+    
+     return inputArr;
+
+	}
+
+
+	var inputArr = [];
+	
+
+	size = parseInt(prompt("Please enter the number of elements: "));	
+	for(var count=0;count<size;count++)
+    {
+        inputArr[count] = parseInt(prompt("Please enter element "+(count+1)+" :"));
+    }
+
+	const answer =bubbleSort(inputArr);
+
+   	for(y=0;y<size;y++)
+                {
+                    console.log(answer[y]);
+                }
+    break;
+    case 4:
+	
+	let checkPalindrome = (str) => {
+
+	    const len = string.length;
+  
+    	for (let i = 0; i < len / 2; i++) {
+
+        	if (string[i] !== string[len - 1 - i]) {
+            	return 'It is not a palindrome';
+    		}
+    	}
+    return 'It is a palindrome';
+	}
+
+	const string = prompt('Enter a string: ');
+
+
+	const value = checkPalindrome(string);
+
+
+	console.log(value);
+        break;
+ }
+ </script>
+ </body>
+ </html>
+
